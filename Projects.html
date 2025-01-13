@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hafsa Siddiqa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #541274;
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 10%;
+            background-color: rgba(26, 26, 26, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            gap: 4rem;
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+        .projects {
+            display: flex;
+            align-items: center;
+            padding: 12rem 10% 5rem;
+            gap: 5rem;
+        }
+
+        .projects-img {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        .projects-img img {
+            width: 100%;
+            border-radius: 2rem;
+            box-shadow: 0 0 20px rgba(142, 68, 173, 0.3);
+        }
+     
+        .projects-content {
+            flex: 1;
+        }
+
+        .projects-content h1 {
+            font-size: 2.0rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .projects-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .typing-text {
+            font-size: 0.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .projects-content p {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+           
+        }
+
+        
+    </style>
+</head>
+<body>
+    <header>
+        <a href="Hafsa.html" class="logo">Hafsa</a>
+        <nav>
+            <a href="Hafsa.html" class="home-link">Home</a>
+            <a href="about.html" class="about-link">About</a>
+            <a href="Projects.html" class="projects-links active">Projects</a>
+            
+        </nav>
+    </header>
+
+    <section class="projects">
+        <div class="projects-content">
+            <a href="https://drive.google.com/drive/folders/1_XEl3bDUKXjhhMTigQT3LjSO3l18SqWL?usp=sharing" target="_blank" class="button"><img src="hotel.jpg" alt="hotel"></a>
+            
+            <a href="https://drive.google.com/drive/folders/1_XEl3bDUKXjhhMTigQT3LjSO3l18SqWL?usp=sharing" target="_blank" class="button"><h1> <span>Download: Hotel Reservation System</span></h1></a>
+             <p>Allows the users to book a room by entering personal information,checking for available rooms, view the rooms and view receipt in the database at the end</p>
+    </section>
+<script>
+    // Handle Projects link click
+        document.querySelector('.projects-link').addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            // Remove active class from all links
+            document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+    
+            // Add active class to Projects link
+            this.classList.add('active');
+    
+           // Redirect to projects page
+           window.location.href = 'projects.html';
+        });
+    </script>
+</body>
+</html>
