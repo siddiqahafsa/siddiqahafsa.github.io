@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Hafsa Siddiqa - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .fa-discord {  
+            background: #5865F2;
+            color: white;  
+        }  
+
+        .fa-viber {  
+            background: #8B66A9;
+            color: white;  
+        }
+
+        .fa-envelope {
+             background: #EA4335;
+             color: white;  
+        }
+
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #541274;
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 10%;
+            background-color: rgba(26, 26, 26, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            gap: 4rem;
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+
+        .home {
+            display: flex;
+            align-items: center;
+            padding: 12rem 10% 5rem;
+            gap: 5rem;
+        }
+
+        .home-img {
+            flex: 1;
+            max-width: 40%;
+        }
+
+        .home-img img {
+            width: 100%;
+            border-radius: 2rem;
+            box-shadow: 0 0 20px rgba(142, 68, 173, 0.3);
+        }
+
+        .home-content {
+            flex: 1;
+        }
+
+        .home-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .home-content h1 span {
+            color: var(--primary-color);
+        }
+
+        .typing-text {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            color: var(--secondary-color);
+        }
+
+        .home-content p {
+            font-size: 1.8rem;
+            margin-bottom: 3rem;
+            line-height: 1.6;
+            color: #e0e0e0;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .social-icons a {
+            width: 5rem;
+            height: 5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            font-size: 2.2rem;
+            transition: 0.3s ease;
+            cursor: pointer;  /* Add this to show it's clickable */
+             position: relative;  /* Add this */
+            z-index: 1;
+        }
+
+            .social-icons a i {
+                 z-index: 2;  /* Add this */
+                width: 100%;  /* Add this */
+              height: 100%;  /* Add this */
+              display: flex;  /* Add this */
+              align-items: center;  /* Add this */
+              justify-content: center;  /* Add this */
+}
+
+        .social-icons a:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+        }
+
+        .button{
+            display: inline-block;
+            padding: 1.5rem 3rem;
+            background: var(--primary-color);
+            color: white;
+            font-size: 1.8rem;
+            border-radius: 0.5rem;
+            transition: 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 1px;
+        }
+
+        .button:hover {
+            background: var(--secondary-color);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(142, 68, 173, 0.4);
+        }
+
+        @media (max-width: 991px) {
+            html {
+                font-size: 55%;
+            }
+
+            .home {
+                flex-direction: column;
+                padding-top: 15rem;
+                text-align: center;
+            }
+
+            .home-img {
+                max-width: 60%;
+                order: -1;
+            }
+
+            .social-icons {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 5%;
+            }
+
+            nav {
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                padding: 1rem 5%;
+                background: rgba(26, 26, 26, 0.95);
+                flex-direction: column;
+                gap: 2rem;
+                display: none;
+            }
+
+            nav.active {
+                display: flex;
+            }
+        }
+
+        @media (max-width: 450px) {
+            html {
+                font-size: 50%;
+            }
+
+            .home-img {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="#" class="logo">Hafsa</a>
+        <nav>
+            <a href="#" class="home-link active">Home</a>
+            <a href="#" class="About-link">About</a>
+            <a href="#" class="Projects-link">Projects</a>
+            
+        </nav>
+    </header>
+
+    <section class="home">
+        <div class="home-img">
+            <img src="images/Hafsa.png" alt="Hafsa Siddiqa">
+        </div>
+        <div class="home-content">
+            <h1>Hi, I'm <span>Hafsa Siddiqa</span></h1>
+            <h3 class="typing-text">Information Technology Student</h3>
+            <p>Majoring in software engineering  with a focus on creating innovative solutions and building meaningful projects. Welcome to my Portfolio! </p>
+            <div class="social-icons">
+                <a href="https://discord.com/users/hafsa_s" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="viber://add?number=8779814" target="_blank" title="Open in Viber">
+                    <i class="fab fa-viber"></i>
+                </a>
+                
+               
+                <a href="https://mail.google.com/mail/?view=cm&fs=1&to=siddiqahafsa367@gmail.com&su=Portfolio%20Inquiry&body=Hello,%20I%20am%20interested%20in%20your%20portfolio." target="_blank"><i class="fas fa-envelope"></i></a>
+
+            </div>
+            
+            <button class="button" onclick="alert('No attached CV at the moment!')">Download CV</button>
+
+            
+            
+           
+        </div>
+    </section>
+
+
+    <script>
+        // Handle About link click
+        document.querySelector('.About-link').addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            // Remove active class from all links
+            document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+    
+            // Add active class to About link
+            this.classList.add('active');
+    
+            // Redirect to About page
+            window.location.href = 'About.html';
+        });
+    
+        // Handle Projects link click
+        document.querySelector('.Projects-link').addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            // Remove active class from all links
+            document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+    
+            // Add active class to Projects link
+            this.classList.add('active');
+    
+           // Redirect to projects page
+           window.location.href = 'Projects.html';
+        });
+    </script>
+    
+
+</body>
+</html>

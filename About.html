@@ -1,0 +1,147 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Hafsa Siddiqa</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            text-decoration: none;
+            border: none;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+        :root {
+            --primary-color: #8e44ad;
+            --secondary-color: #541274;
+            --bg-color: #1a1a1a;
+            --text-color: #ffffff;
+        }
+        html {
+            font-size: 62.5%;
+        }
+        body {
+            width: 100%;
+            min-height: 100vh;
+            overflow-x: hidden;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 10%;
+            background-color: rgba(26, 26, 26, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+        .logo {
+            font-size: 2.8rem;
+            color: var(--primary-color);
+            font-weight: 700;
+            transition: 0.3s ease;
+            letter-spacing: 1px;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        nav {
+            display: flex;
+            gap: 4rem;
+        }
+
+        nav a {
+            font-size: 1.8rem;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: 0.3s ease;
+            position: relative;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background: var(--primary-color);
+            transition: 0.3s ease;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+        }
+        section.About {
+            padding: 10rem 10%;
+        }
+        .About-content {
+            text-align: justify;
+            font-size: 2rem;
+            line-height: 1.6;
+        }
+        .About-content h1{
+          text-align: center;
+        }
+        .About-content p {
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo">Hafsa</a>
+        <nav>
+            <a href="index.html" class="home-link">Home</a>
+            <a href="About.html" class="About-link active">About</a>
+            <a href="Projects.html" class="Projects-links">Projects</a>
+            
+        </nav>
+    </header>
+
+    <section class="About">
+        <div class="About-content">
+            <h1>About Me</h1>
+            <p>Hi, I’m Hafsa Siddiqa, a tech enthusiast from the beautiful Pacific Island of Fiji. Currently, I’m in my third year at the University of Fiji, pursuing a Bachelor of Information Technology (BIT) with a focus on development.</p>
+
+                <p>Technology is exciting to me how we can shape solutions that serve people's needs. My goal is straightforward: to grow in this field, learn continuously, and eventually establish myself as a solo entrepreneur, embracing the concept of virtual offices.
+                
+                I’ve gained proficiency in programming languages like Java, C#, Python,  and also delved into databases and data warehousing (SQL). In my free time, I enjoy working on side projects, like building this website, as I love experimenting with and applying my skills. 
+                
+                Based in Nadi, Fiji, I’m always looking to explore new opportunities, connect with like-minded individuals, and create solutions that make an impact.
+                
+                </p>
+            <p>Feel free to explore my portfolio and reach out for collaborations or inquiries!, through the social media links provided on the Home page</p>
+        </div>
+    </section>
+<script>
+    // Handle Projects link click
+        document.querySelector('.Projects-link').addEventListener('click', function(event) {
+            event.preventDefault();
+    
+            // Remove active class from all links
+            document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
+    
+            // Add active class to Projects link
+            this.classList.add('active');
+    
+           // Redirect to projects page
+           window.location.href = 'Projects.html';
+        });
+    </script>
+</body>
+</html>
