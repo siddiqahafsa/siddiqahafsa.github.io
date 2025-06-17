@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hafsa Siddiqa - Software Engineer Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome for social icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Poppins Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom CSS Variables for Colors */
+        :root {
+            --primary-color: #8e44ad; /* Original primary purple */
+            --secondary-color: #541274; /* Original secondary purple */
+            --bg-light: #f8fafc; /* Very light gray for background */
+            --text-dark: #1e293b; /* Dark text color */
+            --card-bg: #ffffff; /* White background for cards/sections */
+            --border-light: #e2e8f0; /* Light border color */
+        }
+
+        html {
+            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--bg-light); /* Using CSS variable for background */
+            color: var(--text-dark); /* Using CSS variable for text */
+        }
+
+        /* Custom styling for section headings */
+        .section-heading {
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.5rem; /* Space for the underline */
+            margin-bottom: 3rem;
+            font-size: 2.5rem; /* text-4xl */
+            font-weight: 700; /* font-bold */
+            color: var(--text-dark); /* Dark text for headings */
+            text-align: center;
+            width: fit-content;
+        }
+
+        .section-heading::after {
+            content: '';
+            position: absolute;
+            left: 50%; /* Center the underline */
+            transform: translateX(-50%); /* Center the underline */
+            bottom: 0;
+            width: 70px; /* Underline width */
+            height: 4px; /* Underline thickness */
+            background-color: var(--primary-color); /* Primary purple color */
+            border-radius: 9999px; /* Fully rounded corners for the underline */
+        }
+
+        /* Specific styles for social icons as per your original code */
+        .fa-discord {
+            background-color: #5865F2; /* Discord blue */
+            color: white;
+        }
+
+        .fa-viber {
+            background-color: #8B66A9; /* Viber purple */
+            color: white;
+        }
+
+        .fa-envelope {
+            background-color: #EA4335; /* Gmail red */
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white shadow-lg sticky top-0 z-50 bg-opacity-95 backdrop-blur-sm">
+        <nav class="container mx-auto px-4 md:px-8 py-4 flex items-center justify-between">
+            <a href="#home" class="text-3xl font-bold text-[var(--primary-color)] tracking-wide rounded-md p-2 hover:text-[var(--secondary-color)] transition-colors duration-300">Hafsa</a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-700 hover:text-[var(--primary-color)] transition-colors text-xl font-medium rounded-md p-2 hover:bg-gray-100">Home</a>
+                <a href="#about" class="text-gray-700 hover:text-[var(--primary-color)] transition-colors text-xl font-medium rounded-md p-2 hover:bg-gray-100">About</a>
+                <a href="#skills" class="text-gray-700 hover:text-[var(--primary-color)] transition-colors text-xl font-medium rounded-md p-2 hover:bg-gray-100">Skills</a>
+                <a href="#projects" class="text-gray-700 hover:text-[var(--primary-color)] transition-colors text-xl font-medium rounded-md p-2 hover:bg-gray-100">Projects</a>
+                <a href="#cv" class="text-gray-700 hover:text-[var(--primary-color)] transition-colors text-xl font-medium rounded-md p-2 hover:bg-gray-100">CV</a>
+                <a href="#contact" class="text-gray-700 hover:text-[var(--primary-color)] transition-colors text-xl font-medium rounded-md p-2 hover:bg-gray-100">Contact</a>
+            </div>
+            <!-- Mobile Menu Button (Hamburger) -->
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)]">
+                <svg class="w-8 h-8 text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-4 6h4"></path>
+                </svg>
+            </button>
+        </nav>
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="hidden md:hidden bg-white shadow-md">
+            <div class="px-2 pt-2 pb-3 space-y-2 sm:px-3">
+                <a href="#home" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--primary-color)] rounded-md">Home</a>
+                <a href="#about" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--primary-color)] rounded-md">About</a>
+                <a href="#skills" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--primary-color)] rounded-md">Skills</a>
+                <a href="#projects" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--primary-color)] rounded-md">Projects</a>
+                <a href="#cv" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--primary-color)] rounded-md">CV</a>
+                <a href="#contact" class="block px-3 py-2 text-base font-medium text-gray-700 hover:bg-gray-50 hover:text-[var(--primary-color)] rounded-md">Contact</a>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home/Hero Section -->
+        <section id="home" class="bg-gradient-to-r from-purple-700 to-indigo-800 text-white py-24 md:py-32 flex items-center justify-center min-h-screen">
+            <div class="container mx-auto px-4 md:px-8 text-center md:flex md:items-center md:space-x-12">
+                <div class="md:w-1/2 flex justify-center mb-8 md:mb-0">
+                    <!-- Placeholder image. Replace with your actual image: images/Hafsa.png -->
+                    <img src="https://placehold.co/300x300/8e44ad/ffffff?text=Hafsa+Photo" alt="Hafsa Siddiqa" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-4 border-white transition-transform duration-300 hover:scale-105">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Hi, I'm <span class="text-yellow-300">Hafsa Siddiqa</span></h1>
+                    <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-purple-200">Information Technology Student</h3>
+                    <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto md:mx-0 opacity-90">
+                        Majoring in software engineering with a focus on creating innovative solutions and building meaningful projects. Welcome to my Portfolio!
+                    </p>
+                    <div class="flex justify-center md:justify-start space-x-6 mb-8">
+                        <!-- Social Icons -->
+                        <a href="https://discord.com/users/hafsa_s" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl fa-discord" aria-label="Discord Profile">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="viber://add?number=+6798779814" target="_blank" title="Open in Viber" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl fa-viber" aria-label="Viber Number">
+                            <i class="fab fa-viber"></i>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=siddiqahafsa367@gmail.com&su=Portfolio%20Inquiry&body=Hello,%20I%20am%20interested%20in%20your%20portfolio." target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl fa-envelope" aria-label="Send Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                         <!-- Add LinkedIn if you have one -->
+                        <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl bg-blue-700 text-white" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                         <!-- Add GitHub if you have one -->
+                        <a href="https://github.com/yourgithubprofile" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl bg-gray-700 text-white" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <!-- Download CV Button now scrolls to CV section -->
+                    <a href="#cv" class="inline-block bg-white text-[var(--primary-color)] font-bold py-3 px-8 rounded-full shadow-lg hover:bg-gray-100 hover:scale-105 transform transition-all duration-300 ease-in-out">
+                        View My CV
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="py-16 md:py-24 bg-[var(--bg-light)]">
+            <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+                <h2 class="section-heading mx-auto">About Me</h2>
+                <div class="bg-[var(--card-bg)] p-8 md:p-12 rounded-xl shadow-lg border border-[var(--border-light)]">
+                    <p class="text-[var(--text-dark)] leading-relaxed text-lg mb-6">
+                        Hi, I’m <span class="font-semibold text-[var(--primary-color)]">Hafsa Siddiqa</span>, a tech enthusiast from the beautiful Pacific Island of Fiji. Currently, I’m in my third year at the University of Fiji, pursuing a Bachelor of Information Technology (BIT) with a focus on development.
+                    </p>
+                    <p class="text-[var(--text-dark)] leading-relaxed text-lg mb-6">
+                        Technology is exciting to me how we can shape solutions that serve people's needs. My goal is straightforward: to grow in this field, learn continuously, and eventually establish myself as a solopreneur, embracing the concept of virtual offices.
+                    </p>
+                    <p class="text-[var(--text-dark)] leading-relaxed text-lg mb-6">
+                        I’ve gained proficiency in programming languages like <span class="font-semibold text-[var(--primary-color)]">Java, C#, Python</span>, and also delved into <span class="font-semibold text-[var(--primary-color)]">databases and data warehousing (SQL)</span>. In my free time, I enjoy working on side projects, like building this website, as I love experimenting with and applying my skills.
+                    </p>
+                    <p class="text-[var(--text-dark)] leading-relaxed text-lg">
+                        Based in Nadi, Fiji, I’m always looking to explore new opportunities, connect with like-minded individuals, and create solutions that make an impact. Feel free to explore my portfolio and reach out for collaborations or inquiries, through the social media links provided on the Home page.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-5xl text-center">
+                <h2 class="section-heading mx-auto">My Skills</h2>
+                <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
+                    <!-- Example Skill Card (replace images and text with your actual skills) -->
+                    <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=Java" alt="Java Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">Java</h3>
+                    </div>
+                    <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=C%23" alt="C# Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">C#</h3>
+                    </div>
+                    <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=Python" alt="Python Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">Python</h3>
+                    </div>
+                    <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=SQL" alt="SQL Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">SQL</h3>
+                    </div>
+                    <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=HTML" alt="HTML Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">HTML</h3>
+                    </div>
+                    <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=CSS" alt="CSS Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">CSS</h3>
+                    </div>
+                    <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=JS" alt="JavaScript Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">JavaScript</h3>
+                    </div>
+                     <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
+                        <img src="https://placehold.co/64x64/8e44ad/ffffff?text=Git" alt="Git Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
+                        <h3 class="text-xl font-semibold text-[var(--text-dark)]">Git</h3>
+                    </div>
+                    <!-- Add more skill cards as needed -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-16 md:py-24 bg-[var(--bg-light)]">
+            <div class="container mx-auto px-4 md:px-8 max-w-5xl">
+                <h2 class="section-heading mx-auto">My Projects</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+                    <!-- Project Card: Hotel Reservation System -->
+                    <div class="bg-[var(--card-bg)] rounded-xl shadow-lg overflow-hidden border border-[var(--border-light)] hover:shadow-2xl transition-all duration-300">
+                        <!-- Placeholder image. Replace with your actual project image if you have one -->
+                        <img src="https://placehold.co/600x350/541274/ffffff?text=Hotel+Reservation+System" alt="Hotel Reservation System Image" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-[var(--text-dark)] mb-2">Hotel Reservation System</h3>
+                            <p class="text-gray-700 mb-4">
+                                This system allows users to book rooms by entering personal information, check for available rooms, view room details, and view a receipt in the database upon completion.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-100 text-[var(--primary-color)] text-sm font-medium px-3 py-1 rounded-full">Java</span>
+                                <span class="bg-purple-100 text-[var(--primary-color)] text-sm font-medium px-3 py-1 rounded-full">SQL</span>
+                                <span class="bg-purple-100 text-[var(--primary-color)] text-sm font-medium px-3 py-1 rounded-full">Database Management</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="https://drive.google.com/drive/folders/1_XEl3bDUKXjhhMTigQT3LjSO3l18SqWL?usp=sharing" target="_blank" class="text-[var(--primary-color)] hover:text-[var(--secondary-color)] font-semibold flex items-center rounded-md p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.47.087.683-.233.683-.583 0-.289-.011-1.05-.017-2.05A7.054 7.054 0 014 15.75c-.38-.853-.9-1.284-1.423-1.39C2.01 14.28 1.5 14 2 14c.66.088 1.4.375 1.99.702.66.362 1.48.917 2.08 1.57.604.654 1.137.94 1.83.94.7 0 1.25-.19 1.76-.56.068-.48.26-1.02.48-1.57-2.73-.29-5.59-1.36-5.59-6.096 0-1.35.48-2.46 1.28-3.32-.14-.36-.56-1.57.13-3.26 0 0 1.04-.33 3.42 1.26a11.53 11.53 0 016 0c2.38-1.59 3.42-1.26 3.42-1.26.69 1.69.27 2.9.13 3.26.8.86 1.28 1.97 1.28 3.32 0 4.74-2.86 5.8-5.6 6.09.28.24.54.73.54 1.48 0 1.07-.01 2.45-.01 2.78 0 .28-.21.67-.68.58C19.135 20.197 22 16.444 22 12.017 22 6.484 17.523 2 12 2z" clip-rule="evenodd"></path></svg>
+                                    Drive Link
+                                </a>
+                                <!-- Add Live Demo Link if applicable -->
+                                <!-- <a href="#" target="_blank" class="text-[var(--primary-color)] hover:text-[var(--secondary-color)] font-semibold flex items-center rounded-md p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0l-7 7m7-7v6"></path></svg>
+                                    Live Demo
+                                </a> -->
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Another Project Card -->
+                    <div class="bg-[var(--card-bg)] rounded-xl shadow-lg overflow-hidden border border-[var(--border-light)] hover:shadow-2xl transition-all duration-300">
+                        <img src="https://placehold.co/600x350/8e44ad/ffffff?text=Your+Next+Project" alt="Project Placeholder Image" class="w-full h-56 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-bold text-[var(--text-dark)] mb-2">Another Project Title</h3>
+                            <p class="text-gray-700 mb-4">
+                                Describe your next impressive project here. Highlight the challenges, solutions, and technologies used.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-100 text-[var(--primary-color)] text-sm font-medium px-3 py-1 rounded-full">Technology A</span>
+                                <span class="bg-purple-100 text-[var(--primary-color)] text-sm font-medium px-3 py-1 rounded-full">Technology B</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="https://github.com/yourusername/project-repo" target="_blank" class="text-[var(--primary-color)] hover:text-[var(--secondary-color)] font-semibold flex items-center rounded-md p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="w-6 h-6 mr-2" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.47.087.683-.233.683-.583 0-.289-.011-1.05-.017-2.05A7.054 7.054 0 014 15.75c-.38-.853-.9-1.284-1.423-1.39C2.01 14.28 1.5 14 2 14c.66.088 1.4.375 1.99.702.66.362 1.48.917 2.08 1.57.604.654 1.137.94 1.83.94.7 0 1.25-.19 1.76-.56.068-.48.26-1.02.48-1.57-2.73-.29-5.59-1.36-5.59-6.096 0-1.35.48-2.46 1.28-3.32-.14-.36-.56-1.57.13-3.26 0 0 1.04-.33 3.42 1.26a11.53 11.53 0 016 0c2.38-1.59 3.42-1.26 3.42-1.26.69 1.69.27 2.9.13 3.26.8.86 1.28 1.97 1.28 3.32 0 4.74-2.86 5.8-5.6 6.09.28.24.54.73.54 1.48 0 1.07-.01 2.45-.01 2.78 0 .28-.21.67-.68.58C19.135 20.197 22 16.444 22 12.017 22 6.484 17.523 2 12 2z" clip-rule="evenodd"></path></svg>
+                                    GitHub
+                                </a>
+                                <a href="#" target="_blank" class="text-[var(--primary-color)] hover:text-[var(--secondary-color)] font-semibold flex items-center rounded-md p-2 hover:bg-gray-100 transition-colors">
+                                    <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0l-7 7m7-7v6"></path></svg>
+                                    Live Demo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CV Section -->
+        <section id="cv" class="py-16 md:py-24 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-4xl text-center">
+                <h2 class="section-heading mx-auto">My Curriculum Vitae</h2>
+                <div class="bg-[var(--card-bg)] p-8 md:p-12 rounded-xl shadow-lg border border-[var(--border-light)]">
+                    <p class="text-[var(--text-dark)] leading-relaxed text-lg mb-8">
+                        You can download my full Curriculum Vitae (CV) to learn more about my education, work experience, and detailed skills.
+                    </p>
+                    <!-- Replace the href with the actual link to your CV file (e.g., a PDF) -->
+                    <a href="your_cv_file.pdf" target="_blank" class="inline-block bg-[var(--primary-color)] text-white font-bold py-3 px-8 rounded-full shadow-lg hover:bg-[var(--secondary-color)] hover:scale-105 transform transition-all duration-300 ease-in-out">
+                        Download CV
+                    </a>
+                    <p class="text-gray-600 text-sm mt-4">
+                        (Please replace 'your_cv_file.pdf' with the actual link to your CV document.)
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-16 md:py-24 bg-[var(--bg-light)]">
+            <div class="container mx-auto px-4 md:px-8 max-w-2xl text-center">
+                <h2 class="section-heading mx-auto">Get In Touch</h2>
+                <p class="text-[var(--text-dark)] leading-relaxed text-lg mb-8">
+                    Have a question or want to work together? Feel free to reach out!
+                </p>
+                <form class="bg-[var(--card-bg)] p-8 rounded-xl shadow-lg border border-[var(--border-light)]">
+                    <div class="mb-6">
+                        <label for="name" class="block text-[var(--text-dark)] text-lg font-semibold mb-2 text-left">Name</label>
+                        <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] bg-gray-50 text-[var(--text-dark)] transition-all duration-200" placeholder="Your Name" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="email" class="block text-[var(--text-dark)] text-lg font-semibold mb-2 text-left">Email</label>
+                        <input type="email" id="email" name="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] bg-gray-50 text-[var(--text-dark)] transition-all duration-200" placeholder="your.email@example.com" required>
+                    </div>
+                    <div class="mb-6">
+                        <label for="message" class="block text-[var(--text-dark)] text-lg font-semibold mb-2 text-left">Message</label>
+                        <textarea id="message" name="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] bg-gray-50 text-[var(--text-dark)] transition-all duration-200" placeholder="Your message..." required></textarea>
+                    </div>
+                    <button type="submit" class="w-full bg-[var(--primary-color)] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[var(--secondary-color)] hover:scale-105 transform transition-all duration-300 ease-in-out">
+                        Send Message
+                    </button>
+                </form>
+                <div class="mt-8 text-center">
+                    <p class="text-gray-600 mb-4">You can also find me on:</p>
+                    <div class="flex justify-center space-x-6">
+                        <!-- Social Icons (repeated for convenience in contact) -->
+                        <a href="https://discord.com/users/hafsa_s" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl fa-discord" aria-label="Discord Profile">
+                            <i class="fab fa-discord"></i>
+                        </a>
+                        <a href="viber://add?number=+6798779814" target="_blank" title="Open in Viber" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl fa-viber" aria-label="Viber Number">
+                            <i class="fab fa-viber"></i>
+                        </a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=siddiqahafsa367@gmail.com&su=Portfolio%20Inquiry&body=Hello,%20I%20am%20interested%20in%20your%20portfolio." target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl fa-envelope" aria-label="Send Email">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/yourlinkedinprofile" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl bg-blue-700 text-white" aria-label="LinkedIn Profile">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/yourgithubprofile" target="_blank" class="w-12 h-12 flex items-center justify-center rounded-full text-2xl transition-transform duration-300 hover:scale-110 shadow-md transform hover:shadow-xl bg-gray-700 text-white" aria-label="GitHub Profile">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-gray-400 py-8 border-t border-gray-700">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <p>&copy; 2025 Hafsa Siddiqa. All rights reserved.</p>
+            <div class="flex justify-center space-x-6 mt-4">
+                <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
+                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
+                <a href="#cv" class="text-gray-400 hover:text-white transition-colors">CV</a>
+                <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+
+                // Close mobile menu if open
+                if (mobileMenu.classList.contains('block')) {
+                    mobileMenu.classList.remove('block');
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+                mobileMenu.classList.toggle('block');
+            });
+        }
+    </script>
+</body>
+</html>
