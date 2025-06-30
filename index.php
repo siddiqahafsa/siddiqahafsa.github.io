@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hafsa Siddiqa - Software Engineer Portfolio</title>
+    <title>Hafsa Siddiqa-Portfolio</title>
+    <link rel="icon" type="image/png" href="favicon.png">
 
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
@@ -478,7 +479,7 @@
                 <p class="text-[var(--text-dark)] leading-relaxed text-lg mb-8">
                     Have a question or want to work together? Feel free to reach out!
                 </p>
-                <form class="bg-[var(--card-bg)] p-8 rounded-xl shadow-lg border border-[var(--border-light)]">
+                <form action="send-mail.php" method="POST" class="bg-[var(--card-bg)] p-8 rounded-xl shadow-lg border border-[var(--border-light)]">
                     <div class="mb-6">
                         <label for="name" class="block text-[var(--text-dark)] text-lg font-semibold mb-2 text-left">Name</label>
                         <input type="text" id="name" name="name" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] bg-gray-50 text-[var(--text-dark)] transition-all duration-200" placeholder="Your Name" required>
@@ -491,9 +492,11 @@
                         <label for="message" class="block text-[var(--text-dark)] text-lg font-semibold mb-2 text-left">Message</label>
                         <textarea id="message" name="message" rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[var(--primary-color)] bg-gray-50 text-[var(--text-dark)] transition-all duration-200" placeholder="Your message..." required></textarea>
                     </div>
-                    <button type="submit" class="w-full bg-[var(--primary-color)] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[var(--secondary-color)] hover:scale-105 transform transition-all duration-300 ease-in-out">
-                        Send Message
-                    </button>
+                    
+                        <button type="submit" class="w-full bg-[var(--primary-color)] text-white font-bold py-3 px-6 rounded-lg shadow-md hover:bg-[var(--secondary-color)] hover:scale-105 transform transition-all duration-300 ease-in-out">
+                             Send Message
+                        </button>
+
                 </form>
                 <div class="mt-8 text-center">
                     <p class="text-gray-600 mb-4">You can also find me on:</p>
