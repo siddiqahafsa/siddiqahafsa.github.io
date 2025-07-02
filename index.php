@@ -294,7 +294,7 @@
         <section id="home" class="bg-gradient-to-r from-[#8E83A1] to-[#5B4E7A] text-white py-24 md:py-32 flex items-center justify-center min-h-screen">
             <div class="container mx-auto px-4 md:px-8 text-center md:flex md:items-center md:space-x-12">
                 <div class="md:w-1/2 flex justify-center mb-8 md:mb-0">
-                    <!-- Placeholder image. Replace with your actual image: images/Hafsa.png -->
+                    
                     <img src="IMG_3410.jpg" alt="Hafsa Siddiqa" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-4 border-white transition-transform duration-300 hover:scale-105">
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
