@@ -18,34 +18,34 @@
     <style>
         /* Custom CSS Variables for Colors */
         :root {
-            /* Keep primary and secondary purple for other elements if desired, or change them to match a black theme */
-            --primary-color: #8b5cf6; /* A more muted, soft purple (e.g., tailwind purple-500) */
-            --secondary-color: #a78bfa; /* A slightly lighter purple (e.g., tailwind purple-400) */
-            --bg-light: #f8fafc; /* Very light gray for background */
-            --text-dark: #1e293b; /* Dark text color */
-            --card-bg: #fefefe; /* Changed to a brighter white for general cards */
-            --border-light: #e2e8f0; /* Light border color, adjusted for better visibility */
+           
+            --primary-color: #8b5cf6; 
+            --secondary-color: #a78bfa; 
+            --bg-light: #f8fafc;
+            --text-dark: #1e293b; 
+            --card-bg: #fefefe; 
+            --border-light: #e2e8f0; 
         }
 
         html {
-            scroll-behavior: smooth; /* Smooth scrolling for navigation links */
+            scroll-behavior: smooth; 
         }
 
         body {
             font-family: 'Poppins', sans-serif;
-            background-color: var(--bg-light); /* Using CSS variable for background */
-            color: var(--text-dark); /* Using CSS variable for text */
+            background-color: var(--bg-light); 
+            color: var(--text-dark); 
         }
 
-        /* Custom styling for section headings */
+        
         .section-heading {
             position: relative;
             display: inline-block;
-            padding-bottom: 0.5rem; /* Space for the underline */
+            padding-bottom: 0.5rem; 
             margin-bottom: 3rem;
-            font-size: 2.5rem; /* text-4xl */
-            font-weight: 700; /* font-bold */
-            color: var(--text-dark); /* Dark text for headings */
+            font-size: 2.5rem; 
+            font-weight: 700;
+            color: var(--text-dark); 
             text-align: center;
             width: fit-content;
         }
@@ -53,64 +53,64 @@
         .section-heading::after {
             content: '';
             position: absolute;
-            left: 50%; /* Center the underline */
-            transform: translateX(-50%); /* Center the underline */
+            left: 50%; 
+            transform: translateX(-50%); 
             bottom: 0;
-            width: 70px; /* Underline width */
-            height: 4px; /* Underline thickness */
-            background-color: var(--primary-color); /* Primary purple color */
-            border-radius: 9999px; /* Fully rounded corners for the underline */
+            width: 70px; 
+            height: 4px; 
+            background-color: var(--primary-color); 
+            border-radius: 9999px;
         }
 
         .project-card {
             display: flex;
             flex-direction: column;
-            justify-content: space-between; /* Push content apart */
+            justify-content: space-between; 
             height: 100%; /* Ensure cards fill height in grid */
-            padding: 2.5rem; /* Equivalent to p-10 */
-            border-radius: 0.75rem; /* Equivalent to rounded-xl */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            padding: 2.5rem;
+            border-radius: 0.75rem; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
             transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
         }
 
         .project-card:hover {
-            transform: translateY(-5px); /* Lift on hover */
-            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); /* Enhanced shadow on hover */
+            transform: translateY(-5px); 
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2); 
         }
 
         .project-card .project-icon {
-            font-size: 3.5rem; /* Large icon size */
-            margin-bottom: 0.75rem; /* Space below icon */
-            text-align: center; /* Center the icon */
-            width: 100%; /* Allow icon to take full width for centering */
+            font-size: 3.5rem;
+            margin-bottom: 0.75rem; 
+            text-align: center; 
+            width: 100%; 
         }
 
         .project-card h3 {
-            font-size: 1.875rem; /* text-3xl */
-            font-weight: 700; /* font-bold */
-            margin-bottom: 0.5rem; /* Space below title */
-            color: #333; /* Darker color for project titles */
-            text-align: center; /* Center the project title */
+            font-size: 1.875rem;
+            font-weight: 700; 
+            margin-bottom: 0.5rem; 
+            color: #333; 
+            text-align: center; 
         }
 
         .project-card p {
-            font-size: 1.125rem; /* text-lg */
-            line-height: 1.6; /* leading-relaxed */
-            color: #555; /* Slightly lighter for description */
-            margin-bottom: 1.5rem; /* Space before button */
-            flex-grow: 1; /* Allow paragraph to take up available space */
+            font-size: 1.125rem;
+            line-height: 1.6; 
+            color: #555; 
+            margin-bottom: 1.5rem; 
+            flex-grow: 1; 
         }
 
         .project-card .project-button {
             display: inline-block;
-            background-color: #6c5ce7; /* A distinct purple for the button */
+            background-color: #6c5ce7; 
             color: white;
-            font-weight: 600; /* font-semibold */
-            padding: 0.75rem 2rem; /* py-3 px-8 */
-            border-radius: 9999px; /* rounded-full */
+            font-weight: 600; 
+            padding: 0.75rem 2rem; 
+            border-radius: 9999px; 
             transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
-            margin-top: auto; /* Push button to the bottom of the flex container */
-            align-self: center; /* Center the button horizontally */
+            margin-top: auto; 
+            align-self: center;
         }
 
         .project-card .project-button:hover {
@@ -146,7 +146,7 @@
         /* For 'Coming Soon' state */
         .project-card.disabled-card {
             opacity: 0.7;
-            pointer-events: none; /* Disable clicks */
+            pointer-events: none;
         }
         .project-card.disabled-card .project-button {
             background-color: #ccc;
@@ -172,34 +172,34 @@
         .nav-link.active::after {
             content: '';
             position: absolute;
-            left: 50%; /* Center the underline */
-            transform: translateX(-50%); /* Center the underline */
-            bottom: -5px; /* Adjust as needed to place it below the text */
-            width: 40px; /* Underline width, adjust as needed to look good under nav links */
-            height: 2px; /* Underline thickness */
-            background-color: var(--primary-color); /* Purple underline */
-            border-radius: 9999px; /* Rounded ends */
-            transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; /* Smooth transition */
+            left: 50%;
+            transform: translateX(-50%); 
+            bottom: -5px;
+            width: 40px; 
+            height: 2px;
+            background-color: var(--primary-color); 
+            border-radius: 9999px; 
+            transition: width 0.3s ease-in-out, background-color 0.3s ease-in-out; 
         }
 
-        /* Adjustments for fixed header: Ensure content doesn't hide behind the header */
+       
         #home {
-            padding-top: 6rem; /* This is an estimate, adjust based on your header's height + desired spacing */
+            padding-top: 6rem; 
         }
 
         .social-icons a {
-            display: inline-flex; /* Use flexbox for centering icon within the circle */
+            display: inline-flex; 
             justify-content: center;
             align-items: center;
-            width: 64px; /* Increased size for the circular background */
+            width: 64px; 
             height: 64px;
             margin: 0 10px; /* Spacing between icons */
-            border-radius: 50%; /* Make it perfectly circular */
-            background-color: #555; /* Default background color, adjust as needed */
-            color: #fff; /* Default icon color */
-            font-size: 32px; /* Increased icon size */
-            transition: all 0.3s ease; /* Smooth transition for hover effects */
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+            border-radius: 50%; 
+            background-color: #555; 
+            color: #fff; 
+            font-size: 32px;  
+            transition: all 0.3s ease; 
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
         }
 
         /* Specific colors for each social icon on hover */
@@ -224,7 +224,7 @@
             transform: translateY(-5px);
         }
 
-        /* Responsive adjustments using Tailwind-like classes, but directly in CSS for this example */
+        
         @media (max-width: 768px) {
             .social-icons a {
                 width: 50px;
@@ -243,11 +243,11 @@
                 width: 40px;
                 height: 40px;
                 font-size: 20px;
-                margin: 5px; /* Adjust margin for wrapping */
+                margin: 5px; 
             }
         }
 
-        /* Custom class for cursive font */
+        /* cursive font */
         .font-cursive {
             font-family: 'Dancing Script', cursive;
         }
@@ -295,10 +295,10 @@
             <div class="container mx-auto px-4 md:px-8 text-center md:flex md:items-center md:space-x-12">
                 <div class="md:w-1/2 flex justify-center mb-8 md:mb-0">
                     <!-- Placeholder image. Replace with your actual image: images/Hafsa.png -->
-                    <img src="https://placehold.co/300x300/5B4E7A/ffffff?text=Hafsa+Photo" alt="Hafsa Siddiqa" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-4 border-white transition-transform duration-300 hover:scale-105">
+                    <img src="IMG_3410.jpg" alt="Hafsa Siddiqa" class="w-64 h-64 md:w-80 md:h-80 rounded-full object-cover shadow-lg border-4 border-white transition-transform duration-300 hover:scale-105">
                 </div>
                 <div class="md:w-1/2 text-center md:text-left">
-                    <!-- Changed text color to #E0BBE4 and added font-cursive class -->
+                   
                     <h1 class="text-4xl md:text-6xl font-extrabold mb-4 leading-tight">Hi, I'm <span class="font-cursive text-[#E0BBE4]">Hafsa Siddiqa</span></h1>
                     <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-gray-200">Information Technology Student</h3>
                     <p class="text-lg md:text-xl mb-8 max-w-2xl mx-auto md:mx-0 opacity-90">
@@ -342,7 +342,7 @@
                         I’ve gained proficiency in programming languages like <span class="font-semibold text-[var(--primary-color)]">Java, C#, Python</span>, and also delved into <span class="font-semibold text-[var(--primary-color)]">databases and data warehousing (SQL)</span>. In my free time, I enjoy working on side projects, like building this website, as I love experimenting with and applying my skills.
                     </p>
                     <p class="text-[var(--text-dark)] leading-relaxed text-lg">
-                        Based in Nadi, Fiji, I’m always looking to explore new opportunities, connect with like-minded individuals, and create solutions that make an impact. Feel free to explore my portfolio and reach out for collaborations or inquiries, through the social media links provided on the Home page.
+                        Based in Nadi, Fiji, I’m always looking to explore new opportunities, connect with like-minded individuals, and create solutions that make an impact. Feel free to explore my portfolio and reach out for collaborations! 
                     </p>
                 </div>
             </div>
@@ -353,7 +353,7 @@
             <div class="container mx-auto px-4 md:px-8 max-w-5xl text-center">
                 <h2 class="section-heading mx-auto">My Skills</h2>
                 <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8">
-                    <!-- Example Skill Card (replace images and text with your actual skills) -->
+                   
                     <div class="bg-[var(--card-bg)] p-6 rounded-lg shadow-md hover:shadow-xl transition-shadow duration-300 transform hover:scale-105 border border-[var(--border-light)]">
                         <img src="https://placehold.co/64x64/8e44ad/ffffff?text=Java" alt="Java Icon" class="w-16 h-16 mx-auto mb-4 object-contain">
                         <h3 class="text-xl font-semibold text-[var(--text-dark)]">Java</h3>
@@ -451,7 +451,7 @@
                     </p>
                     
                     <div class="relative w-full" style="padding-top: 141.4%;"> <iframe 
-                            src="resume.pdf#toolbar=0" 
+                         src="resume.pdf#toolbar=0"
                             class="absolute top-0 left-0 w-full h-full border-none rounded-md shadow-inner" 
                             title="Hafsa Siddiqa's CV"
                             frameborder="0"
@@ -501,7 +501,7 @@
                 <div class="mt-8 text-center">
                     <p class="text-gray-600 mb-4">You can also find me on:</p>
                     <div class="flex justify-center space-x-6">
-                        <!-- Social Icons (repeated for convenience in contact) -->
+                        <!-- Social Icons -->
                         <div class="social-icons">
                         <a href="https://discord.com/users/hafsa_s" target="_blank">
                             <i class="fab fa-discord"></i>
@@ -529,44 +529,37 @@
     <footer class="bg-gray-800 text-gray-400 py-8 border-t border-gray-700">
         <div class="container mx-auto px-4 md:px-8 text-center">
             <p>&copy; 2025 Hafsa Siddiqa. All rights reserved.</p>
-            <div class="flex justify-center space-x-6 mt-4">
-                <a href="#about" class="text-gray-400 hover:text-white transition-colors">About</a>
-                <a href="#projects" class="text-gray-400 hover:text-white transition-colors">Projects</a>
-                <a href="#cv" class="text-gray-400 hover:text-white transition-colors">CV</a>
-                <a href="#contact" class="text-gray-400 hover:text-white transition-colors">Contact</a>
-            </div>
+            <p>siddiqahafsa367@gmail.com</p>
+            <p>hafsiddiqa@icloud.com</p>
+            
+            
+            
         </div>
     </footer>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             // --- Navigation Active State Logic ---
-            const sections = document.querySelectorAll('section[id]'); // Select all sections with an ID
-            const navLinks = document.querySelectorAll('.nav-link'); // Select all navigation links (desktop and mobile)
+            const sections = document.querySelectorAll('section[id]'); 
+            const navLinks = document.querySelectorAll('.nav-link'); 
 
-            // Get the header's height dynamically to adjust the scroll offset
+            
             const header = document.querySelector('header');
-            let headerHeight = header ? header.offsetHeight : 0; // Get header height, default to 0 if not found
-
-            // Adjust this offset for when a section becomes active.
-            // It's set to activate the link when the section's top is slightly below the bottom of the header.
+            let headerHeight = header ? header.offsetHeight : 0; 
+            
             const observerOptions = {
-                root: null, // The viewport is the root
-                // top: -headerHeight means the section becomes active when its top edge is at the bottom of the header.
-                // bottom: -50% means the section stops being active when its bottom edge reaches 50% of the viewport height.
+                root: null, 
                 rootMargin: `${-headerHeight}px 0px -50% 0px`,
-                threshold: 0 // Trigger as soon as any part of the element enters/leaves
+                threshold: 0 
             };
 
             const observer = new IntersectionObserver((entries) => {
                 let currentActiveSectionId = null;
 
-                // Iterate through entries to find the *first* intersecting section from the top
-                // This logic is robust for various scrolling speeds and section lengths.
+                
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
-                        // Check if the current section is above the previous active one
-                        // or if it's the first one found
+                        
                         if (!currentActiveSectionId ||
                             document.querySelector(`[href="#${entry.target.id}"]`).offsetTop <
                             document.querySelector(`[href="#${currentActiveSectionId}"]`).offsetTop) {
@@ -575,23 +568,22 @@
                     }
                 });
 
-                // If no section is intersecting based on the rootMargin (e.g., at the very top of the page, or between sections)
-                // default to the 'Home' link if the user is near the top.
+                
                 if (!currentActiveSectionId && window.scrollY < headerHeight + 100) { // +100 as a buffer
                     currentActiveSectionId = 'home';
                 }
 
-                // Remove 'active' from all links first
+                
                 navLinks.forEach(link => link.classList.remove('active'));
 
-                // Add 'active' to the corresponding link
+                
                 if (currentActiveSectionId) {
-                    // Find and activate the link in the desktop navigation
+                    
                     const desktopNavLink = document.querySelector(`.hidden.md\\:flex .nav-link[href="#${currentActiveSectionId}"]`);
                     if (desktopNavLink) {
                         desktopNavLink.classList.add('active');
                     }
-                    // Find and activate the link in the mobile navigation
+                    
                     const mobileNavLink = document.querySelector(`#mobile-menu .nav-link[href="#${currentActiveSectionId}"]`);
                     if (mobileNavLink) {
                         mobileNavLink.classList.add('active');
@@ -599,24 +591,24 @@
                 }
             }, observerOptions);
 
-            // Start observing each section
+          
             sections.forEach(section => {
                 observer.observe(section);
             });
 
-            // --- Mobile Menu Toggle Logic ---
+           
             const mobileMenuButton = document.getElementById('mobile-menu-button');
             const mobileMenu = document.getElementById('mobile-menu');
 
             if (mobileMenuButton && mobileMenu) {
                 mobileMenuButton.addEventListener('click', () => {
-                    mobileMenu.classList.toggle('hidden'); // Toggle the 'hidden' class on the mobile menu
+                    mobileMenu.classList.toggle('hidden'); 
                 });
 
-                // Close mobile menu when a link is clicked
+                
                 mobileMenu.querySelectorAll('.nav-link').forEach(link => {
                     link.addEventListener('click', () => {
-                        mobileMenu.classList.add('hidden'); // Hide the menu
+                        mobileMenu.classList.add('hidden'); 
                     });
                 });
             }

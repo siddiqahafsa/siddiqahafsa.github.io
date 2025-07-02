@@ -1,9 +1,18 @@
 <?php
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 
-// Load Composer's autoloader
+
 require 'vendor/autoload.php';
+
+// Load environment variables from .env file
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name    = $_POST["name"];
@@ -17,14 +26,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $mail->isSMTP();
         $mail->Host       = 'smtp.gmail.com';
         $mail->SMTPAuth   = true;
-        $mail->Username   = 'siddiqahafsa367@gmail.com'; // your Gmail
-        $mail->Password   = 'tlmg ideb gdft momd';         // use your Gmail App Password
+       
+        $mail->Username   = $_ENV['GMAIL_USERNAME']; 
+        $mail->Password   = $_ENV['GMAIL_APP_PASSWORD']; 
         $mail->SMTPSecure = 'tls';
         $mail->Port       = 587;
 
         // Recipients
         $mail->setFrom($email, $name);
-        $mail->addAddress('siddiqahafsa367@gmail.com', 'Hafsa Siddiqa');
+       
+        $mail->addAddress($_ENV['MY_EMAIL_RECIPIENT'], $_ENV['MY_RECIPIENT_NAME']);
 
         // Content
         $mail->isHTML(true);
